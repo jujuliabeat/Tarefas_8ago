@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tarefa Jeff H1- Juh Beatriz</title>
+    <style>
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button{
+            border: 1px solid black;
+            border-radius: 0.75rem;
+            background: purple;
+            color: aliceblue;
+            padding: 4px;
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1> Clique aqui </h1>
+    <button> Próximo</button>
+
+    <script>
+        const botao = document.querySelector('button');
+        const texto = document.querySelector('H1');
+
+        botao.addEventListener('click',() => {
+            texto.style.color = 'purple';
+            texto.style.fontSize = '50px';
+            texto.textContent = 'Você é íncrivel, não pense algo diferente';
+        });
+    </script>
+</body>
+</html>
