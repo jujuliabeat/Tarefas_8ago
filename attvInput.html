@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <title> Gravity Falls - MODO ESCURO</title>
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            color: aliceblue;
+            justify-self: center;
+        }
+        img{
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            box-shadow: 2px 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+
+    <img onclick="clicou()" src="imagens/Profile_-_Wendy_Corduroy.webp">
+
+    <h1 id="mensagem"></h1>
+
+    <input type="text" name="" id="">
+
+    <script>
+
+        var mensagem = document.getElementById('mensagem');
+
+        var imagem = document.querySelector('img');
+
+        var input = document.querySelector('input');
+
+        // Opção 1
+
+        function clicou(){
+
+            mensagem.innerText = "Eaeerr....";
+        }
+
+        // Opção 2
+
+        imagem.onmousemove = function (){
+            
+            mensagem.innerText = "Ae, Para com isso!..";
+            // comandos
+        }
+
+        // Opção 3
+
+        imagem.addEventListener('drag', () => {
+            mensagem.innerText = "Aii o que que cê tá fazendo!?.."
+        });
+            
+        // Opção 3 exemplo 2 
+
+        input.addEventListener('keyup', (evento) => {
+
+            console.log(evento);
+
+            var conteudoInput = input.value;
+
+            if(conteudoInput.length <= 3){
+                mensagem.innerText = 'Preciso de mais detalhes';
+                
+            }else if(conteudoInput == "flocos"){
+                    mensagem.innerText = "Ahh! Prefiro chocolate"
+                }
+               else if(conteudoInput == "chocolate"){
+                    mensagem.innerText = "Eu amo sorvete de chocolate!"
+                }
+
+                else{
+                    mensagem.innerText = "Ahh, eu esperava um sabor de sorvete..."
+                }
+        });
+
+            // mensagem.innerText = "Aii o que que cê tá fazendo!?.."});
+
+    </script>
+    
+
+</body>
+</html>
