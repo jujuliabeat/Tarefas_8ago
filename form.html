@@ -137,10 +137,19 @@
 
                     Erro.textContent = "Escolha a Data!";
                     return false;
+
                 }
+
+    // PARTE DAS SENHAS
+
                 if (senha.trim() == "") {
 
                     Erro.textContent = "Diga uma senha..";
+                    return false;
+                }
+                if (senha.length < 8 ) {
+
+                    Erro.textContent = "Senha inválida! Ela deve conter mais de 8 dígitos";
                     return false;
                 }
                 if (confirmar.trim() == "") {
@@ -155,7 +164,7 @@
                 }
                  else {
                     Erro.textContent = '';
-                    alert('Cadastro realizado com sucesso!');
+                    alert('Sucesso pessoa!');
                     return true;
                 }
             }
