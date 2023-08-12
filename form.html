@@ -63,14 +63,14 @@
 </head>
 <body>
     
-    <form action="" method="post" class="form m-lg-20 p-lg-5" id="formulario">
+    <form action="" method="post" class="form m-lg-20 p-lg-5" id="formulario" onsubmit="return validarFormulario();">
         <legend> Cadastro Pessoal </legend>
         <div class="row">
 
             <div class="col">
 
                 <label> Nome </label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" id="name">
             </div>
 
             <div class="col">
@@ -94,11 +94,13 @@
                 <input type="password" class="form-control" id="confirmar">
             
             </div>
+            
+            <div id="Erro" class="text-danger text-center"></div>
 
-        <div class="baixo">
+                <div class="baixo">
                 <div class="column-gap-5 g-lg-5">
 
-                        <button type="submit">Confirmar</button>
+                        <button type="submit" id="enviar">Confirmar</button>
                         &nbsp;
                         <button type="reset">Limpar</button>
 
@@ -106,46 +108,58 @@
 
         </div>
 
+
     </form>
 
     <script>
 
-        var enviar = document.getElementById('submit');
+            var enviar = document.getElementById('enviar');
 
-            enviar.onclick = function(){
+            enviar.addEventListener('click', function () {
+                validarFormulario();
+            });
 
-        var name = document.getElementById('name').value;
-        var senha = document.getElementById('senha').value;
-        var senhaConf = document.getElementById('senhaConf').value;
-        var msgErro = document.getElementById('msgErro');
-        var msgSucesso = document.getElementById('msgSucesso');
-        var reset = document.getElementById('reset');
+            function validarFormulario() {
+                var nome = document.getElementById('name').value;
+                var date = document.getElementById('date').value;
+                var senha = document.getElementById('senha').value;
+                var confirmar = document.getElementById('confirmar').value;
 
-            if(!name){
-                msgErro.textContent = 'Preencha o nome.';
+
+                var Erro = document.getElementById('Erro');
+
+                if (nome.trim() == "") {
+
+                    Erro.textContent = "Digite seu nome...";
+                    return false;
+                }
+                if (date.trim() == "") {
+
+                    Erro.textContent = "Escolha a Data!";
+                    return false;
+                }
+                if (senha.trim() == "") {
+
+                    Erro.textContent = "Diga uma senha..";
+                    return false;
+                }
+                if (confirmar.trim() == "") {
+
+                    Erro.textContent = "Confirme!";
+                    return false;
+                }
+                else if(senha !== confirmar){
+
+                    Erro.textContent = 'As senhas devem ser iguais!!';
+                    return false;
+                }
+                 else {
+                    Erro.textContent = '';
+                    alert('Cadastro realizado com sucesso!');
+                    return true;
+                }
             }
-            else if(!senha){
-                msgErro.textContent = 'Preencha a senha.';
-            }
-            else if(senha.length < 8){
-                msgErro.textContent = 'A senha não pode ter menos que 8 caracteres.';
-            }
-            else if(!senhaConf){
-                msgErro.textContent = 'Confirme a senha.';
-            }
-            else if(senha != senhaConf){
-                msgErro.textContent = 'As senhas devem ser idênticas.'
-            } 
-            else{
 
-        msgSucesso.textContent = 'Cadastro realizado com sucesso!';
-        msgErro.textContent = '';
-        reset.click();
-
-            }
-
-        }
-                    
     </script>
 
 </body>
