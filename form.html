@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formulário - Juh / Prof: Jefferson </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-image:url(imagens/ceu.jpg);
+            color: azure;
+        }
+
+        form{
+            border: 0.5px solid aliceblue;
+            margin: 10%;
+            padding: 3%;
+            background-color: black;
+        }
+
+        legend{
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgb(192, 128, 252);
+            text-transform:capitalize;
+            font-size: xx-large;
+            font-weight:300;
+        }
+
+        label{
+            margin-bottom: 5px;
+            color: rgb(96, 236, 255);
+            text-transform:capitalize;
+            font-weight:300;
+        }
+
+        input{
+            border-radius: 0.75rem;
+            margin-bottom: 3%;
+            border: 1px solid rgb(96, 236, 255);
+            background: transparent;
+        }
+            input:focus-visible{
+            top: -20px;
+            left: 0;
+            color: #bdb8b8;
+            font-size: 12px;
+            }
+        button{
+            border: 1px solid  rgb(192, 128, 252);
+            border-radius: 0.75rem;
+            color: aliceblue;
+            padding: 5px;
+            background: transparent;
+        }
+        .baixo{
+            text-align: center;
+            margin-top: 3%;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <form action="" method="post" class="form m-lg-20 p-lg-5" id="formulario">
+        <legend> Cadastro Pessoal </legend>
+        <div class="row">
+
+            <div class="col">
+
+                <label> Nome </label>
+                <input type="text" class="form-control" id="nome">
+            </div>
+
+            <div class="col">
+                <label> Data de Nascimento </label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            
+            <div class="col">
+
+                <label> Senha de Acesso </label>
+                <input type="password" class="form-control" id="senha">
+            
+            </div>
+    
+            <div class="col">
+                <label> Confrimar Senha </label>
+                <input type="password" class="form-control" id="confirmar">
+            
+            </div>
+
+        <div class="baixo">
+                <div class="column-gap-5 g-lg-5">
+
+                        <button type="submit">Confirmar</button>
+                        &nbsp;
+                        <button type="reset">Limpar</button>
+
+                </div>
+
+        </div>
+
+    </form>
+
+    <script>
+
+        var enviar = document.getElementById('submit');
+
+            enviar.onclick = function(){
+
+        var name = document.getElementById('name').value;
+        var senha = document.getElementById('senha').value;
+        var senhaConf = document.getElementById('senhaConf').value;
+        var msgErro = document.getElementById('msgErro');
+        var msgSucesso = document.getElementById('msgSucesso');
+        var reset = document.getElementById('reset');
+
+            if(!name){
+                msgErro.textContent = 'Preencha o nome.';
+            }
+            else if(!senha){
+                msgErro.textContent = 'Preencha a senha.';
+            }
+            else if(senha.length < 8){
+                msgErro.textContent = 'A senha não pode ter menos que 8 caracteres.';
+            }
+            else if(!senhaConf){
+                msgErro.textContent = 'Confirme a senha.';
+            }
+            else if(senha != senhaConf){
+                msgErro.textContent = 'As senhas devem ser idênticas.'
+            } 
+            else{
+
+        msgSucesso.textContent = 'Cadastro realizado com sucesso!';
+        msgErro.textContent = '';
+        reset.click();
+
+            }
+
+        }
+                    
+    </script>
+
+</body>
+</html>

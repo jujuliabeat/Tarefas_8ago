@@ -6,26 +6,39 @@
     <style>
         body{
             align-items: center;
+            align-self: center;
+            align-content: center;
             justify-content: center;
+            justify-self: center;
+            justify-items: center;
             background-color: black;
             color: aliceblue;
-            justify-self: center;
+            text-align: center;
+            
         }
         img{
             border-radius: 50%;
             width: 250px;
             height: 250px;
             box-shadow: 2px 2px 2px black;
+            margin-bottom: 2%;
+            margin-top: 4%;
+        }
+        input{
+            margin: 5px;
+            border-radius: 0.75rem;
+            border-color: transparent;
         }
     </style>
 </head>
 <body>
 
-    <img onclick="clicou()" src="imagens/Profile_-_Wendy_Corduroy.webp">
+        
+        <img onclick="clicou()" src="imagens/Profile_-_Wendy_Corduroy.webp">
+        
+        <h1 id="mensagem"></h1>
+        <input type="text" name="" id="">
 
-    <h1 id="mensagem"></h1>
-
-    <input type="text" name="" id="">
 
     <script>
 
@@ -46,7 +59,7 @@
 
         imagem.onmousemove = function (){
             
-            mensagem.innerText = "Ae, Para com isso!..";
+            mensagem.innerText = "Ai, Para com isso!..";
             // comandos
         }
 
@@ -78,8 +91,6 @@
                     mensagem.innerText = "Ahh, eu esperava um sabor de sorvete..."
                 }
         });
-
-            // mensagem.innerText = "Aii o que que cê tá fazendo!?.."});
 
     </script>
     

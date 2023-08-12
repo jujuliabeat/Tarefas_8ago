@@ -4,11 +4,39 @@
 
     <title> Gravity Falls </title>
     <style>
+        body{
+            text-align: center;
+        }
         img{
             border-radius: 50%;
             width: 250px;
             height: 250px;
             box-shadow: 2px 2px 2px black;
+            margin-bottom: 2%;
+            margin-top: 4%;
+        }
+        input{
+            margin: 5px;
+            border-radius: 0.75rem;
+            border-color: plum;
+        }
+
+        button{
+            border-radius: 0.70rem;
+            border: none;
+            background-color: rgb(161, 108, 211);
+            padding: 7px;
+            color: aliceblue;
+        }
+
+        .dark-mode {
+        background-color: black;
+        color: white;
+        }
+
+        .light-mode {
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
@@ -20,6 +48,11 @@
 
     <input type="text" name="" id="">
 
+    
+    <h3 id="DarkModetext">Dark Mode Desabilitado</h3>
+    <button onclick="darkMode()">Darkmode</button>
+    <button onclick="lightMode()">LightMode</button>
+
     <script>
 
         var mensagem = document.getElementById('mensagem');
@@ -28,7 +61,19 @@
 
         var input = document.querySelector('input');
 
-        // Opção 1
+        function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode Ativo";
+        }
+        function lightMode() {
+            var element = document.body;
+            var content = document.getElementById("DarkModetext");
+            element.className = "light-mode";
+            content.innerText = "Dark Mode Desabilitado";
+        }
+            // Opção 1
 
         function clicou(){
 
@@ -66,7 +111,6 @@
             }
         });
 
-            // mensagem.innerText = "Aii o que que cê tá fazendo!?.."});
 
     </script>
     
